@@ -1,0 +1,51 @@
+//Global - fonts 
+$font-family: "Roboto", sans-serif;
+
+$font-size-100: 16px;
+$font-size-200: 18px;
+$font-size-300: 32px;
+$font-size-400: 48px;
+
+$font-weight-300: 900;
+$font-weight-200: 700;
+$font-weight-100: 400;
+
+//Colors
+$color-primary-dark: #0C2447;
+$color-primary-light: #FFF;
+$color-secondary-dark: #B31B22;
+$color-secondary-light: #FF5B62;
+
+//radius
+$radii-100: 32px;
+$radii-200: 64px;
+
+//width
+$card-width-100: 171px;
+$card-width-200: 290px;
+
+//Height
+$card-height-100: 190px;
+$card-height-200: 403px;
+
+//Shadow
+@mixin boxShadow($blurSize: 1){
+    box-shadow: 4px 4px #{12 * $blurSize}px 0px #00000026;    
+}
+
+@mixin cardSize($size: 100){
+    width: $card-width-#{$size};
+    height: $card-height-#{$size};
+    //style
+    border-radius: $radii-100;
+    @include boxShadow(2);
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    @include cardSize(100);
+}
